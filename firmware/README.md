@@ -1,4 +1,4 @@
-# NovaIoT FleetGuard — Firmware Prototype (Option B: Software Simulation)
+# NovaIoT FleetGuard — Firmware Prototype
 
 This is a **software simulation** of the firmware, submitted under the
 assignment's Option B (no physical hardware required). It implements the
