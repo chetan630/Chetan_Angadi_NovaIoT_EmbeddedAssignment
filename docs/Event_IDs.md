@@ -38,18 +38,3 @@ in.
 {"ts": 1735000000.60, "event_id": "EV008", "type": "sensor_recovered", "payload": {"sensor": "temp_humidity"}}
 {"ts": 1735000000.75, "event_id": "EV010", "type": "configuration_change", "payload": {"update": {"thresholds": {"temperature_c": {"warning": [-2.0, 8.5]}}}}}
 ```
-
-## Notes
-
-- **Back-compatibility:** earlier builds of this prototype logged the boot
-  event under the type string `power_restart`. That string is kept as an
-  alias mapping to `EV001` in `EVENT_CATALOG` so historical logs and any
-  external tooling built against the old name keep working; new code
-  should log `boot` going forward.
-- **Extending the catalog:** add new entries to `EVENT_CATALOG` in
-  `firmware/src/event_logger.py` and to the table above in the same
-  change, so the code and this document never drift apart. Reserve the
-  next unused `EVxxx` number rather than reusing one.
-- **Numbering is not severity-ordered.** Severity is carried by the
-  Decision Engine's `Condition` enum (Normal/Warning/Critical/Fault), not
-  by the Event ID number — don't infer priority from ID order.
