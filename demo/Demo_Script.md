@@ -1,6 +1,6 @@
 # Demonstration Video — Script
 
-**3. Working prototype**
+**1. Working prototype**
 - Open a terminal, `cd firmware`, run `python3 main.py`.
 - Narrate each phase as it prints: normal → warning → critical → door
   event → sensor fault injection → DEGRADED state → recovery → low
