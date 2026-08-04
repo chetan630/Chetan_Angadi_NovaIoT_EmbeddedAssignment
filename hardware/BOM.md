@@ -16,16 +16,3 @@
 | Sensor | Ambient Light Sensor | Rohm Semiconductor | BH1750FVI-TR | Ambient Light Detection | 1 |
 | Sensor | 3-Axis Accelerometer | STMicroelectronics | LIS3DH | Vibration & Shock Detection | 1 |
 | Circuit | Precision Resistors (100 kΩ / 22 kΩ, 0603, 1%) | Yageo | RC0603FR-07100KL / RC0603FR-0722KL | Battery Voltage Divider (ADC Scaling) | 2 |
-
-**Notes**
-
-- Part numbers reflect a representative, sourceable option per component;
-  final selection should be confirmed against current distributor stock
-  (DigiKey/Mouser) and lead time before production ordering.
-- `ESP32-S3-WROOM-1-N16R8` was selected over lower-memory variants
-  (e.g. N4, N8) to leave comfortable headroom for FreeRTOS, the TLS stack
-  needed for future cloud connectivity, and OTA update partitioning.
-- The LDO alternate previously listed (AMS1117-3.3) was dropped in favor
-  of a single specified part (AP2112K-3.3TRG1), which has a lower dropout
-  voltage and better line/load regulation — relevant given the buck
-  converter output tolerance feeding it.
