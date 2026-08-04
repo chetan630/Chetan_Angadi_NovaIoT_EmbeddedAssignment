@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram name="Data Flow" id="data_flow">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="680" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sensors" value="Sensors
+(raw physical readings)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="acquire" value="Sensor Manager
+read + validate + retry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="140" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="fault" value="Fault?
+(missing/out-of-range/
+comms failure)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="140" width="200" height="70" as="geometry" /></mxCell>
+        <mxCell id="lkg" value="Use Last-Known-Good
++ mark stale" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="250" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="classify" value="Decision Engine
+classify vs thresholds" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="250" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="worst" value="Worst-case condition
+across parameters" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="350" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="logevent" value="Event Logger
+append + fsync (crash-safe)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="350" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="alertout" value="Alert Manager
+LED + Buzzer state" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="450" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="storage" value="Local Storage
+SPI Flash (buffer) -&gt;
+MicroSD (archive)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="450" width="200" height="70" as="geometry" /></mxCell>
+        <mxCell id="cloud" value="Cloud Sync (future)
+Wi-Fi/BLE uplink" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="550" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="e0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="sensors" target="acquire"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e1" value="check" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="acquire" target="fault"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="fault" target="lkg"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="no" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="fault" target="classify"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="stale reading" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="lkg" target="classify"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="classify" target="worst"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="on state change" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="worst" target="logevent"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="worst" target="alertout"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="logevent" target="storage"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="not yet implemented" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="storage" target="cloud"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

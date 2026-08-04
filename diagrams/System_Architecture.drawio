@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram name="System Architecture" id="system_architecture">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sensing" value="Sensing Layer
+(SHT41, BH1750, LIS3DH,
+Reed Switch, Battery ADC)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="220" height="80" as="geometry" /></mxCell>
+        <mxCell id="acq" value="Data Acquisition Layer
+(Sensor Manager: read,
+validate, retry/backoff)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="160" width="220" height="80" as="geometry" /></mxCell>
+        <mxCell id="decision" value="Decision Engine
+(threshold classification:
+Normal / Warning / Critical / Fault)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="280" width="220" height="90" as="geometry" /></mxCell>
+        <mxCell id="state" value="Device State Machine
+(BOOT / RUNNING / DEGRADED /
+FAULT / CONFIG)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="280" width="220" height="90" as="geometry" /></mxCell>
+        <mxCell id="alert" value="Alert Manager
+(RGB LED, Buzzer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="410" width="220" height="70" as="geometry" /></mxCell>
+        <mxCell id="logger" value="Event Logger
+(SPI Flash buffer +
+MicroSD historical log)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="410" width="220" height="70" as="geometry" /></mxCell>
+        <mxCell id="config" value="Config Manager
+(NVS-backed, validated
+runtime updates)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="600" y="280" width="220" height="90" as="geometry" /></mxCell>
+        <mxCell id="conn" value="Connectivity Layer (future)
+Wi-Fi/BLE -&gt; Cloud Ingest" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="600" y="410" width="220" height="70" as="geometry" /></mxCell>
+        <mxCell id="power" value="Power Subsystem
+12-24V in -&gt; buck -&gt; 3.3V,
+battery-backed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="320" y="40" width="220" height="80" as="geometry" /></mxCell>
+        <mxCell id="e0" value="raw readings" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="sensing" target="acq"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e1" value="validated data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="acq" target="decision"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="sensor health" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="decision" target="state"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="condition" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="decision" target="alert"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="decision" target="logger"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="state transitions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="state" target="logger"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="thresholds" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="config" target="decision"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="config change events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="config" target="logger"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="sync (future)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="logger" target="conn"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="power" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="power" target="sensing"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

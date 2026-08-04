@@ -1,0 +1,44 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram name="Hardware Block Diagram" id="hardware_block_diagram">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="560" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mcu" value="ESP32-S3-WROOM-1
+(Dual-core, Wi-Fi/BLE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1"><mxGeometry x="380" y="240" width="220" height="90" as="geometry" /></mxCell>
+        <mxCell id="sht41" value="SHT41-AD1B
+Temp/Humidity (I2C)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="bh1750" value="BH1750
+Ambient Light (I2C)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="120" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="lis3dh" value="LIS3DH
+Vibration (I2C)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="200" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="reed" value="Reed Switch
+Door Status (GPIO)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="280" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="battadc" value="Battery Divider
+(ADC)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="360" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="led" value="RGB LED (GPIO)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="700" y="100" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="buzzer" value="Active Buzzer (GPIO)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="700" y="180" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="flash" value="External SPI Flash
+(Event Buffer)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="700" y="260" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="sd" value="Industrial MicroSD
+(Historical Logs, SPI)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="700" y="340" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="usb" value="USB Debug
+(Programming/Diagnostics)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1"><mxGeometry x="700" y="420" width="200" height="60" as="geometry" /></mxCell>
+        <mxCell id="power" value="Power Subsystem
+12-24V Input -&gt; Protection
+-&gt; Buck -&gt; 3.3V LDO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1"><mxGeometry x="380" y="420" width="220" height="90" as="geometry" /></mxCell>
+        <mxCell id="e0" value="I2C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="sht41" target="mcu"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e1" value="I2C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="bh1750" target="mcu"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" value="I2C" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="lis3dh" target="mcu"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" value="GPIO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="reed" target="mcu"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" value="ADC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="battadc" target="mcu"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" value="GPIO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="mcu" target="led"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" value="GPIO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="mcu" target="buzzer"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" value="SPI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="mcu" target="flash"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" value="SPI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="mcu" target="sd"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" value="UART" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="mcu" target="usb"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" value="3.3V" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="power" target="mcu"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# Runtime-generated firmware state (regenerated on each run)
+firmware/data/event_log.jsonl
+firmware/config/device_config.json
+
+# OS
+.DS_Store
