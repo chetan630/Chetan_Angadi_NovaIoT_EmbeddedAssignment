@@ -27,7 +27,9 @@ class Device:
         self.alerts = AlertManager(config)
 
         self.cycle_count = 0
-        self.logger.log("power_restart", {"note": "device boot"})
+        self._last_door_open = None
+        self._last_sensor_health = dict(self.sensors.health())
+        self.logger.log("boot", {"note": "device boot"})
         self.state_machine.transition(DeviceState.RUNNING, "initialization complete")
 
     def run_cycle(self):
@@ -48,6 +50,21 @@ class Device:
         for sensor_key, reading in readings.items():
             if reading.get("error"):
                 self.logger.log("sensor_failure", {"sensor": sensor_key, "error": reading["error"]})
+            elif not self._last_sensor_health.get(sensor_key, True) and health.get(sensor_key):
+                # Sensor was unavailable last cycle and is healthy again now.
+                self.logger.log("sensor_recovered", {"sensor": sensor_key})
+        self._last_sensor_health = dict(health)
+
+        # Door open/closed are logged as their own discrete context events
+        # (not just embedded in the condition details), since a door event
+        # is operationally significant on its own even when temperature
+        # stays in the Normal band.
+        door_reading = readings.get("door")
+        if door_reading and door_reading["value"] is not None:
+            door_open = door_reading["value"]["door_open"]
+            if self._last_door_open is not None and door_open != self._last_door_open:
+                self.logger.log("door_open" if door_open else "door_closed", {})
+            self._last_door_open = door_open
 
         if condition in (Condition.WARNING, Condition.CRITICAL, Condition.FAULT):
             self.logger.log(f"{condition.value.lower()}_event", details)
