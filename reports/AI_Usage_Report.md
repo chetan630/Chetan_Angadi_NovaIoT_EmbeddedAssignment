@@ -8,8 +8,7 @@ were used to complete this submission, honestly and specifically.
 
 ## Tool Used
 
-**Claude** (Anthropic), used via the Claude web/chat interface with
-computer/file-creation tools enabled.
+**ChatGpt**, **Claude**, **Gemini**, **Replit**.
 
 ## Purpose
 
