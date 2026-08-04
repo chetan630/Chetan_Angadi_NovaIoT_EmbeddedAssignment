@@ -21,40 +21,6 @@ were used to complete this submission, honestly and specifically.
 * AI tools were used to improve clarity, consistency, and readability of technical documentation across the project, while ensuring technical accuracy was preserved.
 * AI tools were used to help identify potential edge cases, risks, and limitations, which were then critically evaluated and incorporated into the final engineering analysis where appropriate.
 
-## How It Was Used — Workflow
-
-1. The candidate provided the assignment brief (PDF) and the current
-   state of the GitHub repository, and asked Claude to analyze what was
-   already done against the brief before doing anything else.
-2. Claude inventoried the repository, identified which required
-   deliverables existed, which were empty placeholder files (e.g.
-   `Firmware_Architecture.md` and the three `.drawio` files were 0 bytes),
-   and which were entirely missing (no `firmware/`, `reports/`, or
-   `demo/` directories existed).
-3. Rather than assume scope, Claude asked the candidate three direct
-   questions before writing anything: (a) whether the working prototype
-   should be Option A (physical hardware) or Option B (simulation), (b)
-   what to prioritize in this session, and (c) how to fill the empty
-   diagram files. The candidate chose Option B (software simulation),
-   asked for everything to be completed in order, and asked for both
-   Mermaid-in-Markdown and draw.io XML diagram sources.
-4. Claude then built the firmware simulation (config manager, sensor
-   manager with fault injection, decision engine, event logger, alert
-   manager, state machine, orchestrator, a 9-phase scripted demo, and a
-   9-test unit test suite), ran it, and used the failing config-merge
-   test case it surfaced to fix a real bug (a shallow dict merge that
-   silently dropped a sibling threshold field during a nested
-   configuration update) before treating the module as done.
-5. Claude generated the diagram sources (System Architecture, Hardware
-   Block Diagram, Data Flow) as both draw.io XML (via a small helper
-   script, validated as well-formed XML) and Mermaid diagrams embedded
-   directly in the relevant Markdown docs.
-6. Claude wrote `docs/Firmware_Architecture.md`, rewrote `README.md` to
-   include the required project overview / setup / build / assumptions /
-   limitations sections, and generated the Engineering Decision Report as
-   a PDF using `reportlab` (verified at 5 pages, within the 10-page
-   limit) and this AI Usage Report as Markdown.
-
 ## Generated Outputs Used
 
 - All firmware simulation source code (`firmware/src/*.py`,
