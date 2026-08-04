@@ -1,0 +1,21 @@
+{"ts": 1785840258.5458453, "type": "power_restart", "payload": {"note": "device boot"}}
+{"ts": 1785840258.553376, "type": "state_transition", "payload": {"from": "BOOT", "to": "RUNNING", "reason": "initialization complete"}}
+{"ts": 1785840259.1696115, "type": "warning_event", "payload": {"temp_humidity": {"condition": "WARNING", "temperature_c": 9.05, "humidity_rh": 56.7, "stale": false}, "battery": {"condition": "NORMAL", "voltage_v": 12.63}, "door": {"door_open": false}}}
+{"ts": 1785840259.4852285, "type": "warning_event", "payload": {"temp_humidity": {"condition": "WARNING", "temperature_c": 9.09, "humidity_rh": 53.39, "stale": false}, "battery": {"condition": "NORMAL", "voltage_v": 12.61}, "door": {"door_open": false}}}
+{"ts": 1785840259.690003, "type": "critical_event", "payload": {"temp_humidity": {"condition": "CRITICAL", "temperature_c": 14.07, "humidity_rh": 59.33, "stale": false}, "battery": {"condition": "NORMAL", "voltage_v": 12.63}, "door": {"door_open": false}}}
+{"ts": 1785840259.8943534, "type": "critical_event", "payload": {"temp_humidity": {"condition": "CRITICAL", "temperature_c": 14.28, "humidity_rh": 59.84, "stale": false}, "battery": {"condition": "NORMAL", "voltage_v": 12.6}, "door": {"door_open": false}}}
+{"ts": 1785840260.0983844, "type": "critical_event", "payload": {"temp_humidity": {"condition": "CRITICAL", "temperature_c": 14.13, "humidity_rh": 58.62, "stale": false}, "battery": {"condition": "NORMAL", "voltage_v": 12.56}, "door": {"door_open": true}}}
+{"ts": 1785840260.101877, "type": "state_transition", "payload": {"from": "RUNNING", "to": "DEGRADED", "reason": "one or more sensors unavailable"}}
+{"ts": 1785840260.105847, "type": "sensor_failure", "payload": {"sensor": "temp_humidity", "error": "SHT41 (Temp/Humidity): simulated communication failure"}}
+{"ts": 1785840260.1102307, "type": "critical_event", "payload": {"temp_humidity": {"condition": "CRITICAL", "temperature_c": 14.13, "humidity_rh": 58.62, "stale": true}, "battery": {"condition": "NORMAL", "voltage_v": 12.62}, "door": {"door_open": false}}}
+{"ts": 1785840260.3153815, "type": "sensor_failure", "payload": {"sensor": "temp_humidity", "error": "SHT41 (Temp/Humidity): simulated communication failure"}}
+{"ts": 1785840260.3191597, "type": "critical_event", "payload": {"temp_humidity": {"condition": "CRITICAL", "temperature_c": 14.13, "humidity_rh": 58.62, "stale": true}, "battery": {"condition": "NORMAL", "voltage_v": 12.63}, "door": {"door_open": false}}}
+{"ts": 1785840260.522134, "type": "sensor_failure", "payload": {"sensor": "temp_humidity", "error": "SHT41 (Temp/Humidity): simulated communication failure"}}
+{"ts": 1785840260.5244975, "type": "critical_event", "payload": {"temp_humidity": {"condition": "CRITICAL", "temperature_c": 14.13, "humidity_rh": 58.62, "stale": true}, "battery": {"condition": "NORMAL", "voltage_v": 12.59}, "door": {"door_open": false}}}
+{"ts": 1785840260.7273362, "type": "state_transition", "payload": {"from": "DEGRADED", "to": "RUNNING", "reason": "all sensors healthy"}}
+{"ts": 1785840261.1337824, "type": "critical_event", "payload": {"temp_humidity": {"condition": "NORMAL", "temperature_c": 5.08, "humidity_rh": 50.96, "stale": false}, "battery": {"condition": "CRITICAL", "voltage_v": 10.22}, "door": {"door_open": false}}}
+{"ts": 1785840261.1395748, "type": "state_transition", "payload": {"from": "RUNNING", "to": "CONFIG", "reason": "applying configuration update"}}
+{"ts": 1785840261.1471303, "type": "configuration_change", "payload": {"update": {"thresholds": {"temperature_c": {"warning": [-2.0, 8.5]}}}}}
+{"ts": 1785840261.1504886, "type": "state_transition", "payload": {"from": "CONFIG", "to": "RUNNING", "reason": "configuration update finished"}}
+{"ts": 1785840261.161062, "type": "power_restart", "payload": {"note": "device boot"}}
+{"ts": 1785840261.1673532, "type": "state_transition", "payload": {"from": "BOOT", "to": "RUNNING", "reason": "initialization complete"}}
