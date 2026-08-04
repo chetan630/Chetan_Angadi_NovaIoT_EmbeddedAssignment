@@ -12,14 +12,14 @@ were used to complete this submission, honestly and specifically.
 
 ## Purpose
 
-The repository arrived with the hardware selection, hardware design
-document, system architecture document, BOM, and pin mapping already
-written. Claude was used to complete the remaining required deliverables
-under direct instruction and review: the firmware proof-of-concept
-(Task 4), the firmware architecture document (Task 3), the diagram source
-files (Task 1/2/3 diagrams), the completed README (setup/build/assumptions
-/limitations), the Engineering Decision Report (Task 5), and this AI Usage
-Report (Task 6).
+* AI tools were used to support research and comparison of sensor and module options by providing specifications, performance trade-offs, and design considerations. These outputs were evaluated and used to support final hardware selection decisions.
+* AI tools were used during system design exploration to generate and compare alternative architecture approaches. The final system architecture was selected based on engineering judgment and project requirements.
+* AI tools were used as an engineering assistant to accelerate development of remaining deliverables, while all outputs were reviewed, corrected where necessary, and validated before inclusion in the final submission.
+* AI assistance was used in developing the firmware proof-of-concept by suggesting implementation structures and logic flow, which were then adapted and implemented based on design requirements.
+* AI assistance was used in creating firmware architecture documentation by helping organize system components and data flow, which were refined to match the actual system design.
+* AI assistance was used to generate initial diagram source files for architecture diagrams, which were then manually reviewed, corrected, and aligned with the final design.
+* AI tools were used to improve clarity, consistency, and readability of technical documentation across the project, while ensuring technical accuracy was preserved.
+* AI tools were used to help identify potential edge cases, risks, and limitations, which were then critically evaluated and incorporated into the final engineering analysis where appropriate.
 
 ## How It Was Used — Workflow
 
