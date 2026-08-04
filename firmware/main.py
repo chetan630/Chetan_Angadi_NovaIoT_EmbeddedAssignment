@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-NovaIoT FleetGuard - Firmware Prototype (Option B: Software Simulation)
+NovaIoT FleetGuard - Firmware Prototype
 =========================================================================
 Runs a scripted demo scenario through the full firmware pipeline:
 
@@ -11,8 +11,7 @@ Runs a scripted demo scenario through the full firmware pipeline:
 This is a proof-of-concept demonstrating the firmware architecture
 described in docs/Firmware_Architecture.md. It is not the production
 ESP-IDF/Arduino firmware image; it models the same modules and control
-flow so the design can be verified without physical hardware, per the
-assignment's Option B.
+flow so the design can be verified without physical hardware.
 
 Run:
     python3 main.py
