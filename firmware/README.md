@@ -1,7 +1,6 @@
 # NovaIoT FleetGuard — Firmware Prototype
 
-This is a **software simulation** of the firmware, submitted under the
-assignment's Option B (no physical hardware required). It implements the
+This is a **software simulation** of the firmware, It implements the
 same module boundaries and control flow described in
 [`../docs/Firmware_Architecture.md`](../docs/Firmware_Architecture.md), using
 simulated sensor drivers instead of real I2C/GPIO/ADC calls, so the
