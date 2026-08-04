@@ -191,4 +191,4 @@ Chetan_Angadi_NovaIoT_EmbeddedAssignment/
 | Task 4 — Working Prototype | [`firmware/`](firmware/) (run instructions in [`firmware/README.md`](firmware/README.md)) |
 | Task 5 — Engineering Decision Report | [`reports/Chetan_Angadi_EngineeringReport.pdf`](reports/) |
 | Task 6 — AI Usage Report | [`reports/AI_Usage_Report.md`](reports/AI_Usage_Report.md) |
-| Demonstration Video | [`demo/Demo_Script.md`](demo/Demo_Script.md) (script for the video — recording/upload is the candidate's own step) |
+| Demonstration Video | [`demo/Demo_Script.md`](demo/Demo_Script.md) (script for the video — Not uploaded)  |
