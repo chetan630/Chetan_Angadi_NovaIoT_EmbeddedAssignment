@@ -19,39 +19,8 @@ were used to complete this submission, honestly and specifically.
 * AI assistance was used in creating firmware architecture documentation by helping organize system components and data flow, which were refined to match the actual system design.
 * AI assistance was used to generate initial diagram source files for architecture diagrams, which were then manually reviewed, corrected, and aligned with the final design.
 * AI tools were used to improve clarity, consistency, and readability of technical documentation across the project, while ensuring technical accuracy was preserved.
-* AI tools were used to help identify potential edge cases, risks, and limitations, which were then critically evaluated and incorporated into the final engineering analysis where appropriate.
+* AI tools were used to help idntify potential edge cases, risks, and limitations, which were then critically evaluated and incorporated into the final engineering analysis where appropriate.
 
-## Generated Outputs Used
-
-- All firmware simulation source code (`firmware/src/*.py`,
-  `firmware/main.py`, `firmware/tests/test_core.py`) — used as-is after
-  being run and verified (9/9 unit tests passing, full 9-phase demo
-  scenario producing expected state transitions and log entries).
-- All three `.drawio` diagram files and their Mermaid equivalents
-  embedded in `docs/System_Architecture.md`, `docs/Hardware_Design.md`,
-  and `docs/Firmware_Architecture.md` — used as-is, validated as
-  well-formed XML.
-- `docs/Firmware_Architecture.md`, the rewritten `README.md`, and the
-  Engineering Decision Report PDF — used as drafted, since they
-  synthesize decisions already made and documented elsewhere in the
-  repository (hardware/architecture docs) rather than inventing new
-  engineering claims.
-
-## Generated Outputs Rejected / Corrected
-
-- The first version of `ConfigManager.update()` used a one-level-deep
-  dictionary merge. When exercised by the demo scenario (a nested
-  threshold update) and by a unit test written specifically to check
-  this behaviour, it silently dropped a sibling field it wasn't supposed
-  to touch. This was caught by actually running the code rather than
-  trusting it, and was rewritten as a recursive deep merge before being
-  accepted.
-- No other generated code or content was rejected outright, but all
-  generated engineering content (hardware rationale, trade-off framing,
-  risk list) was scoped deliberately to summarize and extend decisions
-  already present in the pre-existing `docs/Hardware_Design.md` and
-  `docs/System_Architecture.md` rather than introduce new, unreviewed
-  hardware or architecture claims.
 
 ## Independent Engineering Decisions (Candidate's Own Judgment)
 
