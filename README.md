@@ -13,8 +13,7 @@ deployable across a fleet that scales from 10 to 10,000+ units.
 
 This repository contains the engineering-grade solution design and a
 working proof-of-concept requested by the assignment brief: it is **not**
-a fully functioning physical prototype (per the assignment's own scope —
-"You are not required to build a fully functioning physical prototype").
+a fully functioning physical prototype.
 
 **What's implemented:**
 
